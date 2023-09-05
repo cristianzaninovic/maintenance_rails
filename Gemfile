@@ -42,8 +42,23 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-# Use Sass to process CSS
-# gem "sassc-rails"
+# Use dartsass in css building  https://github.com/rails/dartsass-rails/tree/main
+gem "dartsass-rails", "~> 0.5.0"
+
+# Bootstrap 5 
+gem 'bootstrap', '~> 5.3.1'
+
+# Use jquery as the JavaScript librar
+gem 'jquery-rails'
+
+# Gem Faker If you get a uninitialized constant Faker::[some_class] error, your version of the gem is behind main.
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+
+#  Forms https://github.com/bootstrap-ruby/bootstrap_form
+gem "bootstrap_form", "~> 5.2"
+
+# Devise forms: https://github.com/lcreid/devise-bootstrap-form
+gem 'devise-bootstrap-form'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
