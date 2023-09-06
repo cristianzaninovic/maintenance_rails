@@ -1,47 +1,15 @@
-<%= form_with(model: maintenance) do |form| %>
-  <% if maintenance.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(maintenance.errors.count, "error") %> prohibited this maintenance from being saved:</h2>
-
-      <ul>
-        <% maintenance.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.number_field :type %>
-  </div>
-
-  <div>
-    <%= form.label :motor_id, style: "display: block" %>
-    <%= form.text_field :motor_id %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.label :city_id, style: "display: block" %>
-    <%= form.text_field :city_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<%= simple_form_for @maintenance do |form| %>
+  <%= form.error_notification %>
+  <%= form.error_notification message: form.object.errors[:base].to_sentence if form.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= form.input :date %>
+    <%= form.input :name %>
+    <%= form.input :maintenance_class, collection: Maintenance.maintenance_classes  %>
+    <%= form.association :city  %>
+    <%= form.association :motor %>
+    <%= form.association :user, label_method: :email %>
+  </div>  
+  <div class="form-actions">
+    <%= form.button :submit, class: 'btn btn-outline-primary ' %>  
+  </div>  
 <% end %>

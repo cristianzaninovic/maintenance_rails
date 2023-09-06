@@ -1,10 +1,10 @@
-<h1>Editing material</h1>
+<h1 class='text-primary'>Editing material</h1>
 
 <%= render "form", material: @material %>
 
 <br>
 
 <div>
-  <%= link_to "Show this material", @material %> |
-  <%= link_to "Back to materials", materials_path %>
+  <%= link_to "Show this material", @material, class: 'btn btn-outline btn-sucess' %>
+  <%= link_to "Back to materials", materials_path, class: 'btn btn-outline btn-primary' %>
 </div>

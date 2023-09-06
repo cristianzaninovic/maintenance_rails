@@ -18,7 +18,7 @@ class MaintenancesTest < ApplicationSystemTestCase
     fill_in "Date", with: @maintenance.date
     fill_in "Motor", with: @maintenance.motor_id
     fill_in "Name", with: @maintenance.name
-    fill_in "Type", with: @maintenance.type
+    fill_in "Maintenance Class", with: @maintenance.maintenance_class
     fill_in "User", with: @maintenance.user_id
     click_on "Create Maintenance"
 
@@ -34,7 +34,7 @@ class MaintenancesTest < ApplicationSystemTestCase
     fill_in "Date", with: @maintenance.date
     fill_in "Motor", with: @maintenance.motor_id
     fill_in "Name", with: @maintenance.name
-    fill_in "Type", with: @maintenance.type
+    fill_in "Maintenance Class", with: @maintenance.maintenance_class
     fill_in "User", with: @maintenance.user_id
     click_on "Update Maintenance"
 

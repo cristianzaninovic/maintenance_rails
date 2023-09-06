@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <%= link_to "Maintenance JetMaintain", root_path, :class=>"navbar-brand nav-link active text-white" %>
+    <%= link_to "JetMaintain", root_path, :class=>"navbar-brand nav-link active text-white" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,13 +10,16 @@
           <a class="nav-link active" aria-current="page" href="<%= root_path %>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Motors</a>
+          <%= link_to "Motors", motors_path, :class=>"nav-link" %>          
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Maintenance</a>
+          <%= link_to "Maintenance", maintenances_path, :class=>"nav-link" %>          
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Terms&Conditions</a>
+          <%= link_to "Materials", materials_path, :class=>"nav-link" %>          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home/terms">Terms&Conditions</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

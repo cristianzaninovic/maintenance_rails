@@ -15,7 +15,7 @@ class MotorsTest < ApplicationSystemTestCase
     click_on "New motor"
 
     fill_in "Name", with: @motor.name
-    fill_in "Type", with: @motor.type
+    fill_in "Motor Class", with: @motor.motor_class
     click_on "Create Motor"
 
     assert_text "Motor was successfully created"
@@ -27,7 +27,7 @@ class MotorsTest < ApplicationSystemTestCase
     click_on "Edit this motor", match: :first
 
     fill_in "Name", with: @motor.name
-    fill_in "Type", with: @motor.type
+    fill_in "Motor Class", with: @motor.motor_class
     click_on "Update Motor"
 
     assert_text "Motor was successfully updated"

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PruebaCursoRails</title>
+    <title>JetMaintain</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,6 +18,8 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <div class="container border border-secondary border-1 rounded p-3 my-1">
+      <%= yield %>
+    </div>
   </body>
 </html>

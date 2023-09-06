@@ -17,7 +17,7 @@ class MotorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create motor" do
     assert_difference("Motor.count") do
-      post motors_url, params: { motor: { name: @motor.name, type: @motor.type } }
+      post motors_url, params: { motor: { name: @motor.name, motor_class: @motor.motor_class } }
     end
 
     assert_redirected_to motor_url(Motor.last)
@@ -34,7 +34,7 @@ class MotorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update motor" do
-    patch motor_url(@motor), params: { motor: { name: @motor.name, type: @motor.type } }
+    patch motor_url(@motor), params: { motor: { name: @motor.name, type: @motor.motor_class } }
     assert_redirected_to motor_url(@motor)
   end
 

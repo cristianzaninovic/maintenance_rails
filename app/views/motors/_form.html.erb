@@ -1,27 +1,13 @@
-<%= form_with(model: motor) do |form| %>
-  <% if motor.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(motor.errors.count, "error") %> prohibited this motor from being saved:</h2>
+<%= simple_form_for @motor do |form| %>
+  <%= form.error_notification %>
+  <%= form.error_notification message: form.object.errors[:base].to_sentence if form.object.errors[:base].present? %>
 
-      <ul>
-        <% motor.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-inputs">
+    <%= form.input :name %>
+    <%= form.input :motor_class, collection: Motor.motor_classes   %>
   </div>
 
-  <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.number_field :type %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <div class="form-actions">
+    <%= form.button :submit, class: 'btn btn-outline-primary ' %>  
+  </div>  
 <% end %>

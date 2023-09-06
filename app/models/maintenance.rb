@@ -3,5 +3,5 @@ class Maintenance < ApplicationRecord
   belongs_to :user
   belongs_to :city
   has_many :materials, through: :maintenance_material_lists
-  enum type: [:preventive, :corrective]
+  enum maintenance_class: [:preventive, :corrective]
 end

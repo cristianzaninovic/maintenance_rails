@@ -1,4 +1,4 @@
-<%= form_with(model: material) do |form| %>
+<%= bootstrap_form_with(model: material) do |form| %>
   <% if material.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(material.errors.count, "error") %> prohibited this material from being saved:</h2>

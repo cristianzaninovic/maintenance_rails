@@ -17,7 +17,7 @@ class MaintenancesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create maintenance" do
     assert_difference("Maintenance.count") do
-      post maintenances_url, params: { maintenance: { city_id: @maintenance.city_id, date: @maintenance.date, motor_id: @maintenance.motor_id, name: @maintenance.name, type: @maintenance.type, user_id: @maintenance.user_id } }
+      post maintenances_url, params: { maintenance: { city_id: @maintenance.city_id, date: @maintenance.date, motor_id: @maintenance.motor_id, name: @maintenance.name, type: @maintenance.maintenance_class, user_id: @maintenance.user_id } }
     end
 
     assert_redirected_to maintenance_url(Maintenance.last)
@@ -34,7 +34,7 @@ class MaintenancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update maintenance" do
-    patch maintenance_url(@maintenance), params: { maintenance: { city_id: @maintenance.city_id, date: @maintenance.date, motor_id: @maintenance.motor_id, name: @maintenance.name, type: @maintenance.type, user_id: @maintenance.user_id } }
+    patch maintenance_url(@maintenance), params: { maintenance: { city_id: @maintenance.city_id, date: @maintenance.date, motor_id: @maintenance.motor_id, name: @maintenance.name, maintenance_class: @maintenance.maintenance_class, user_id: @maintenance.user_id } }
     assert_redirected_to maintenance_url(@maintenance)
   end
 
