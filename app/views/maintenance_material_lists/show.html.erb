@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @maintenance_material_list %>
+
+<div>
+  <%= link_to "Edit this maintenance material list", edit_maintenance_material_list_path(@maintenance_material_list) %> |
+  <%= link_to "Back to maintenance material lists", maintenance_material_lists_path %>
+
+  <%= button_to "Destroy this maintenance material list", @maintenance_material_list, method: :delete %>
+</div>

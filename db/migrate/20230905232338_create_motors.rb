@@ -1,0 +1,10 @@
+class CreateMotors < ActiveRecord::Migration[7.0]
+  def change
+    create_table :motors do |t|
+      t.string :name
+      t.integer :type
+
+      t.timestamps
+    end
+  end
+end

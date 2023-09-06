@@ -1,0 +1,1 @@
+json.partial! "maintenance_material_lists/maintenance_material_list", maintenance_material_list: @maintenance_material_list
