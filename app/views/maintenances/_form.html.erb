@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= form.input :date %>
     <%= form.input :name %>
-    <%= form.input :maintenance_class, collection: Maintenance.maintenance_classes  %>
+    <%= form.input :maintenance_class, collection: Maintenance.maintenance_classes.keys, include_blank: false, prompt: "select..."  %>
     <%= form.association :city  %>
     <%= form.association :motor %>
     <%= form.association :user, label_method: :email %>

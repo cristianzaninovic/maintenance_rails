@@ -1,4 +1,4 @@
-<div id="<%= dom_id maintenance %>">
+<div id="<%= dom_id maintenance %>" class="border border-secondary border-1 rounded p-3 my-1">
   <p>
     <strong>Date:</strong>
     <%= maintenance.date %>
@@ -16,17 +16,17 @@
 
   <p>
     <strong>Motor:</strong>
-    <%= maintenance.motor_id %>
+    <%= maintenance.motor.name %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= maintenance.user_id %>
+    <%= maintenance.user.email %>
   </p>
 
   <p>
     <strong>City:</strong>
-    <%= maintenance.city_id %>
+    <%= maintenance.city.name %>
   </p>
-
+  <%= image_tag "motor0#{rand(1..9)}", alt: "Imagen del motor" %>
 </div>

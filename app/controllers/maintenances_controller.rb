@@ -9,6 +9,7 @@ class MaintenancesController < ApplicationController
 
   # GET /maintenances/1 or /maintenances/1.json
   def show
+    
   end
 
   # GET /maintenances/new
@@ -18,6 +19,7 @@ class MaintenancesController < ApplicationController
 
   # GET /maintenances/1/edit
   def edit
+    
   end
 
   # POST /maintenances or /maintenances.json
