@@ -1,6 +1,6 @@
 class Motor < ApplicationRecord
   has_many :maintenances
-  enum type: [:reaction, :turbo]
+  enum motor_class: [:reaction, :turbo]
   has_one_attached :main_image
   
   # Callback para establecer el nombre antes de la validación
@@ -9,16 +9,12 @@ class Motor < ApplicationRecord
   private
 
   def set_motor_name
-    # Asegúrate de que el tipo sea válido (puedes agregar más validaciones según tu lógica)
-    if self.type.present? && self.type.in?(Motor.types.keys)
-      # Encuentra el último motor de ese tipo y obtén su número
-      last_motor = Motor.where(type: self.type).order(:number).last
-      number = last_motor ? last_motor.number + 1 : 1
-
-      # Establece el nombre del motor basado en el tipo y el número
-      self.name = "#{self.type}_#{number}"
+    if self.motor_class.present? && self.motor_class.in?(Motor.motor_classes.keys)
+      last_motor = Motor.where(motor_class: self.motor_class).count
+      number = last_motor ? last_motor + 1 : 1
+      self.name = "#{self.motor_class}_#{number}"
     else
-      errors.add(:type, "Tipo de motor no válido")
+      errors.add(:motor_class, "Tipo de motor no válido")
     end
   end
 end

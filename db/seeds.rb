@@ -42,3 +42,12 @@ material = Material.new(  :name => 'Ignition System')
 material.save!
 material = Material.new(  :name => 'Fuel System')
 material.save!
+
+40.times do
+  motor = Motor.new(
+    motor_class: Motor.motor_classes.keys.sample, 
+    # main_image: Faker::LoremFlickr.image(size: "300x200", search_terms: ['engine']) 
+  )
+
+  motor.save!
+end
