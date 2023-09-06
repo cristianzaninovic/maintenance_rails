@@ -51,12 +51,15 @@ class MaintenancesController < ApplicationController
 
   # DELETE /maintenances/1 or /maintenances/1.json
   def destroy
-    @maintenance.destroy
-
-    respond_to do |format|
-      format.html { redirect_to maintenances_url, notice: "Maintenance was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    if current_user.role == 'admin'
+      @maintenance.destroy
+      respond_to do |format|
+        format.html { redirect_to maintenances_url, notice: "Maintenance was successfully destroyed." }
+        format.json { head :no_content }
+      end      
+    else
+      redirect_to root_path, alert: 'No tienes permiso para eliminar este mantenimiento.'
+    end    
   end
 
   private
@@ -67,6 +70,6 @@ class MaintenancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def maintenance_params
-      params.require(:maintenance).permit(:date, :name, :type, :motor_id, :user_id, :city_id)
+      params.require(:maintenance).permit(:date, :name, :maintenance_class, :motor_id, :user_id, :city_id)
     end
 end

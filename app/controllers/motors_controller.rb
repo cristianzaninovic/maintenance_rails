@@ -74,6 +74,6 @@ class MotorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def motor_params
-      params.require(:motor).permit(:name, :type)
+      params.require(:motor).permit(:name, :motor_class)
     end
 end
