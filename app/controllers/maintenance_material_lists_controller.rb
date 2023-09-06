@@ -1,4 +1,5 @@
 class MaintenanceMaterialListsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_maintenance_material_list, only: %i[ show edit update destroy ]
 
   # GET /maintenance_material_lists or /maintenance_material_lists.json

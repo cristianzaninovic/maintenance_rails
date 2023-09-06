@@ -1,4 +1,5 @@
 class MaterialsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_material, only: %i[ show edit update destroy ]
 
   # GET /materials or /materials.json

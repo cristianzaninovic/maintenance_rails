@@ -45,7 +45,8 @@ material.save!
 
 40.times do
   motor = Motor.new(
-    motor_class: Motor.motor_classes.keys.sample, 
+    motor_class: Motor.motor_classes.keys.sample,
+    description: Faker::Lorem.characters(number: 10)
     # main_image: Faker::LoremFlickr.image(size: "300x200", search_terms: ['engine']) 
   )
 

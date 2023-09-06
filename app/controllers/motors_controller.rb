@@ -1,4 +1,5 @@
 class MotorsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_motor, only: %i[ show edit update destroy ]
 
   # GET /motors or /motors.json
@@ -8,6 +9,9 @@ class MotorsController < ApplicationController
 
   # GET /motors/1 or /motors/1.json
   def show
+    random_number = rand(1..10)
+    formatted_number = random_number < 10 ? "0#{random_number}" : random_number.to_s
+    @random_motor_image = "motor#{formatted_number}"
   end
 
   # GET /motors/new

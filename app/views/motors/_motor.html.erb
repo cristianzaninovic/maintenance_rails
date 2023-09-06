@@ -3,10 +3,13 @@
     <strong>Name:</strong>
     <%= motor.name %>
   </p>
-
+  <p>
+    <strong>Description:</strong>
+    <%= motor.description %>
+  </p>
   <p>
     <strong>Motor Class:</strong>
     <%= motor.motor_class %>
   </p>
-
+  <%= image_tag @random_motor_image, alt: "Imagen del motor" %>
 </div>

@@ -1,4 +1,5 @@
 class MaintenancesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_maintenance, only: %i[ show edit update destroy ]
 
   # GET /maintenances or /maintenances.json
@@ -21,6 +22,7 @@ class MaintenancesController < ApplicationController
 
   # POST /maintenances or /maintenances.json
   def create
+    
     @maintenance = Maintenance.new(maintenance_params)
 
     respond_to do |format|

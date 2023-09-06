@@ -1,14 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Motors</h1>
-
-<div id="motors">
-  <% @motors.each do |motor| %>
-    <%= render motor %>
-    <p>
-      <%= link_to "Show this motor", motor %>
-    </p>
-  <% end %>
+<div id="motors" class="card-deck">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <% @motors.each do |motor| %>
+      <%= render partial: 'motor_index', locals: {motor: motor} %>      
+    <% end %>
+  </div>
 </div>
 
-<%= link_to "New motor", new_motor_path %>
+<%= link_to "New motor", new_motor_path, class: 'btn btn-outline-success' %>
