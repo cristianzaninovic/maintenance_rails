@@ -6,6 +6,14 @@ class Motor < ApplicationRecord
   # Callback para establecer el nombre antes de la validación
   before_validation :set_motor_name, on: :create
 
+  def self.search(search)
+    if search  
+      find(:all, :conditions => ['description LIKE ?', "%#{search}%"])  
+    else  
+      find(:all)  
+    end  
+  end
+
   private
 
   def set_motor_name

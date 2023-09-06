@@ -1,5 +1,6 @@
 <p style="color: green"><%= notice %></p>
 <h1>Motors</h1>
+<div class="py-3"><%= pagy_bootstrap_nav(@pagy).html_safe %></div>
 <div id="motors" class="card-deck">
   <div class="row row-cols-1 row-cols-md-4 g-4">
     <% @motors.each do |motor| %>
@@ -7,5 +8,5 @@
     <% end %>
   </div>
 </div>
-
+<div class="py-3"><%= pagy_bootstrap_nav(@pagy).html_safe %></div>
 <%= link_to "New motor", new_motor_path, class: 'btn btn-outline-success' %>

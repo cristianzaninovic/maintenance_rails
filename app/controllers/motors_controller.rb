@@ -4,6 +4,11 @@ class MotorsController < ApplicationController
 
   # GET /motors or /motors.json
   def index
+    if params[:search].present?
+      @pagy, @motors = pagy(Motor.where("name LIKE ? OR description LIKE ?", "\%#{params[:search]}\%", "\%#{params[:search]}\%"), items: 10)
+    else      
+      @pagy, @motors = pagy((Motor.all.order(name: :desc)), items: 8)
+    end    
     @motors = Motor.all
   end
 
